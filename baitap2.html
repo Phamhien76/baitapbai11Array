@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+2. Khai báo mảng 2 chiều số nguyên arrInt
+a. Nhập giá trị các phần tử của mảng từ bàn phím
+b. In giá trị các phần tử của mảng
+c. In giá trị các phần tử nằm trên đường biên (Coi mảng 2 chiều là ma
+trận)
+d. In giá trị các phần tử nằm trên đường chéo chính và phụ
+e. Sắp xếp mảng tăng dần theo dòng (không và có sử dụng hàm sort)
+        */
+        //Khai báo mảng 2 chiều số nguyên arrInt
+        let arrInt = [];
+        // Số hàng và số cột của mảng
+        let numRow = +prompt("Hãy nhập số dòng:");
+        let numCols = +prompt("Hãy nhập số cột:");
+
+        //a. Nhập giá trị các phần tử của mảng từ bàn phím
+        for (let i = 0; i < numRow; i++) {
+            let arrRow = [];
+            for (let j = 0; j < numCols; j++) {
+                let num = +prompt("Hãy nhập số: ");
+                arrRow.push(num);
+
+            }
+            arrInt.push(arrRow);
+        }
+        //b. In giá trị các phần tử của mảng1
+
+        console.log("Các giá trị phần tử của mảng là", arrInt);
+        //c. In giá trị các phần tử nằm trên đường biên (Coi mảng 2 chiều là ma trận)
+        console.log("Các phần tử nằm trên đường biên của mảng:");
+
+        for (let i = 0; i < numRow; i++) {
+            for (let j = 0; j < numCols; j++) {
+                if (i === 0 || i === numRow - 1 || j === 0 || j === numCols - 1) {
+                    console.log(arrInt);
+                }
+            }
+        }
+        // d. In giá trị các phần tử nằm trên đường chéo chính và phụ
+        console.log("Các phần tử nằm trên đường chéo chính của mảng:");
+        for (let i = 0; i < numRow; i++) {
+            for (let j = 0; j < numCols; j++) {
+                if (i === j) {
+                    console.log(arrInt);
+                }
+            }
+        }
+        console.log("Các phần tử nằm trên đường chéo phụ của mảng:");
+        for (let i = 0; i < numRow; i++) {
+            for (let j = 0; j < numCols; j++) {
+                if (i + j === numRow - 1) {
+                    console.log(arrInt);
+                }
+            }
+        }
+        //e. Sắp xếp mảng tăng dần theo dòng (không và có sử dụng hàm sort)
+        // Sắp xếp mảng tăng dần theo từng dòng
+        for (let i = 0; i < numRows; i++) {
+            arrInt[i].sort((a, b) => a - b);
+        }
+
+        // In mảng sau khi đã sắp xếp
+        console.log("Mảng sau khi đã sắp xếp tăng dần theo từng dòng:");
+        for (let i = 0; i < numRows; i++) {
+            for (let j = 0; j < numCols; j++) {
+                console.log(arrInt);
+            }
+        }
+    </script>
+</body>
+
+</html>
